@@ -1,0 +1,30 @@
+@import "../../../assets/style/variable.scss";
+@import "../../../assets/style/mixin.scss";
+
+.user-course {
+    &-title {
+        background-color: $black-color;
+        padding: 5rem 0;
+        h1 {
+            @include text($text-lg, $fw-bold, white);
+        }
+    }
+    
+    .course-list {
+        display: flex;
+        flex-flow: row wrap;
+        list-style-type: none;
+        width: calc(100% + 3rem);
+        margin-left: -3rem;
+        padding: 10rem 0;
+        margin-top: -7rem;
+        margin-bottom: -10rem;
+        overflow-x: hidden;
+        li {
+            width: calc(25% - 3rem);
+            margin-left: 3rem;
+            margin-bottom: 4rem;
+        }
+    }
+    
+}

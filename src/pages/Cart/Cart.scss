@@ -1,0 +1,142 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/mixin.scss";
+
+.cart-page {
+    margin-bottom: 4rem;
+    .title {
+        background-color: $black-color;
+        padding: 4rem 0;
+        margin-bottom: 3rem;
+        h1 {
+            @include text($text-xl, $fw-bold, white);
+        }
+    }
+    .cart-content {
+        display: flex;
+        justify-content: space-between;
+    }
+    .cart-right {
+        width: 65%;
+        .cart-list {
+            list-style-type: none;
+            padding: 0%;
+            li {
+                padding: 1.5rem 1rem;
+                display: flex;
+                border: 1px solid $black-color-light;
+                img {
+                    width: 13rem;
+                    height: 7rem;
+                    object-fit: cover;
+                }
+                .info {
+                    width: 60%;
+                    margin-left: 2rem;
+                    h3 {
+                        @include text($text-base, $fw-bold, $black-color);
+                        line-height: 2.2rem;
+                        margin-bottom: 0.5rem
+                    }
+                    p {
+                        @include text($text-sm-2, $fw-normal, $black-color);
+                    }
+                }
+                .action {
+                    margin-left: auto;
+                    button {
+                        margin-left: 1.5rem;
+                        border: 0;
+                        background-color: transparent;
+                        &.remove {
+                            &:hover {
+                                color: rgb(212, 34, 34);
+                                background-color: white;
+                            }
+                            width: 3.5rem;
+                            height: 3.5rem;
+                            background-color: rgb(212, 34, 34);
+                            font-size: $text-base;
+                            line-height: 3rem;
+                            color: white;
+                            border: 1px solid rgb(212, 34, 34);
+                            border-radius: 1rem;
+                            transition: all 0.2s linear;
+                            cursor: pointer;
+                        }
+                        &.wishlist {
+                            &:hover {
+                                color: rgb(33, 179, 33);
+                                background-color: white;
+                            }
+                            width: 3.5rem;
+                            height: 3.5rem;
+                            background-color: rgb(33, 179, 33);
+                            font-size: $text-base;
+                            line-height: 3rem;
+                            color: white;
+                            border: 1px solid rgb(33, 179, 33);
+                            border-radius: 1rem;
+                            cursor: pointer;
+                            transition: all 0.2s linear;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .cart-left {
+        width: 25%;
+        p {
+            @include text($text-base, $fw-normal, $black-color);
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem
+        }
+        .btn {
+            @include button($text-sm, $fw-bold, 1.5rem, 3rem);
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        .discount {
+            border-top: 1px solid $black-color-light;
+            padding-top: 2rem;
+            h3 {
+                @include text($text-base, $fw-bold, $black-color);
+                margin-bottom: 1rem;
+            }
+            &-input {
+                width: 100%;
+                display: flex;
+                input {
+                    &:focus {
+                        outline: none;
+                    }
+                    flex: 1;
+                    background-color: transparent;
+                    border: 1px solid $black-color;
+                    border-right: 0;
+                    padding: 0.8rem 1rem;
+                }
+                .btn {
+                    @include button($text-sm-2, $fw-bold, 0.5rem, 0.2rem);
+                    margin-bottom: 0;
+                    width: 25%;
+                }
+            }
+        }
+    }
+    .no-item {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        img {
+            width: 30rem;
+            height: 25rem;
+            object-fit: cover;
+        }
+        .btn {
+            @include button($text-base, $fw-bold, 1.5rem, 5rem);
+            margin-top: 2rem;
+        }
+    }
+}

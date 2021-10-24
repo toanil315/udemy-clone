@@ -1,0 +1,27 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/mixin.scss";
+
+.search-page {
+    .search-content {
+        h2 {
+            @include text($text-lg, $fw-bold, $black-color);
+            margin-top: 3rem;
+            span {
+                @include text($text-md, $fw-normal, $black-color-hover);
+            }
+        }
+        .result {
+            & > .item {
+                width: calc(25% - 4.5rem);
+                margin-left: 4.5rem;
+                margin-bottom: 3rem;
+            }
+            display: flex;
+            flex-flow: row wrap;
+            margin-left: -4.5rem;
+            margin-top: 4rem;
+            width: calc(100% + 4.5rem);
+            margin-bottom: 6rem;
+        }
+    }
+}

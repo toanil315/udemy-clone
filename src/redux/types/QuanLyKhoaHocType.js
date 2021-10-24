@@ -1,0 +1,5 @@
+export const SET_LIST_COURSE = "SET_LIST_COURSE";
+export const SET_CATEGORY = "SET_CATEGORY";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_COURSE_IN_CART = "REMOVE_COURSE_IN_CART";
+export const CLEAR_CART = "CLEAR_CART";

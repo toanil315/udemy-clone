@@ -1,0 +1,62 @@
+@import './variable.scss';
+
+@mixin search-input($radius, $text, $padding, $bg) {
+    display: flex;
+    align-items: center;
+    background-color: $bg;
+    padding: $padding;
+    border: 1px solid $black-color;
+    border-radius: $radius;
+    font-size: $text;
+    
+    & > i {
+        font-size: $text-sm;
+        padding-right: $padding;
+    }
+
+    input {
+        &:focus {
+            outline: none;
+        }
+        background-color: transparent;
+        border: 0;
+        font-size: $text;
+        flex: 1;
+    }
+}
+
+@mixin text($fs, $fw, $color) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+}
+
+@mixin button($fs, $fw, $py, $px) {
+    &:hover {
+        background-color: $bg-element-primary;
+    }
+    &.btn-black {
+        &:hover {
+            background-color: $black-color-hover;
+        }
+        background-color: $black-color;
+        color: white;
+    }
+    &.btn-purple {
+        &:hover {
+            background-color: $text-hover-color;
+        }
+        background-color: $purple;
+        border-color: $purple;
+        color: white;
+    }
+    background-color: white;
+    padding: $py $px;
+    border: 1px solid $black-color;
+    font-size: $fs;
+    font-weight: $fw;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}

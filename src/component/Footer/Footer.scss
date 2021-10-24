@@ -1,0 +1,47 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/mixin.scss";
+
+.footer {
+    background-color: $black-color;
+    .footer-content {
+        &-top {
+            padding-top: 4rem;
+            display: flex;
+            ul {
+                list-style-type: none;
+                padding: 0;
+                width: 25%;
+                li {
+                    &.right {
+                        text-align: right;
+                    }
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                    @include text($text-sm, $fw-normal, white);
+                    padding-bottom: 1.5rem;
+                    cursor: pointer;
+                    .btn {
+                        @include button($text-sm, $fw-bold, 1.2rem, 3rem);
+                        border: 1px solid white;
+                        i {
+                            padding-right: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+        &-bot {
+            padding: 4rem 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                width: 9rem;
+            }
+            p {
+                @include text($text-sm, $fw-normal, white);
+            }
+        }
+    }
+}

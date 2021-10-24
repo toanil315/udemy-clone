@@ -1,0 +1,183 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/mixin.scss";
+
+.admin {
+    .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .add-btn {
+            &:hover {
+                color: white;
+                background-color: $admin-primary-color;
+            }
+            border: 0;
+            background-color: transparent;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid $admin-primary-color;
+            border-radius: 5px;
+            color: $admin-primary-color;
+            cursor: pointer;
+            transition: all 0.2s linear;
+            i {
+                padding-right: 0.5rem;
+            }
+        }
+    }
+    p {
+        margin-bottom: 0;
+    }
+    span {
+        &.hv, &.gv {
+            display: inline-block;
+            padding: 0.2rem 1.5rem;
+            border-radius: 1rem;
+            color: white;
+        }
+        &.hv {
+            background-color: rgb(175, 175, 27);
+        }
+        &.gv {
+            background-color: rgb(6, 143, 6);
+        }
+    }
+    .admin-table {
+        .ant-table {
+            .ant-table-container {
+                table {
+                    border-spacing: 0 2rem;
+                    thead {
+                        & > tr {
+                            th {
+                                &::before {
+                                    height: 0 !important; 
+                                    width: 0 !important;
+                                }
+                                &:first-child {
+                                    border-top-left-radius: 2rem;
+                                    border-bottom-left-radius: 2rem;
+                                }
+                                &:last-child {
+                                    border-top-right-radius: 2rem;
+                                    border-bottom-right-radius: 2rem;
+                                }
+                            }
+                        }
+                    } 
+                    .ant-table-tbody {
+                        & > tr {
+                            &:hover {
+                                & > td {
+                                    &:nth-child(4) {
+                                        z-index: 2;
+                                    }
+                                    background-color: $admin-primary-color;
+                                    border-color: $admin-primary-color;
+                                    color: white;
+                                    transform: translate(1rem, -1rem);
+                                    z-index: 1;
+                                }
+                            }
+                            & > td {
+                                &:first-child {
+                                    border-top-left-radius: 2rem;
+                                    border-bottom-left-radius: 2rem;
+                                    border-left: 1.5px solid $black-color-light;
+                                }
+                                &:last-child {
+                                    border-top-right-radius: 2rem;
+                                    border-bottom-right-radius: 2rem;
+                                    border-right: 1.5px solid $black-color-light;
+                                }
+                                border-top: 1.5px solid $black-color-light;
+                                border-bottom: 1.5px solid $black-color-light;
+                                padding: 1rem 1.5rem;
+                                background-color: white;
+                                transition: all 0.15s linear;
+                            }
+                        }
+                    }
+                } 
+            } 
+        }
+    }
+    .author {
+        &:hover {
+            .info {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        width: fit-content;
+        position: relative;
+        & > img {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .info {
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -3rem;
+                width: 3rem;
+                height: 100%;
+                background-color: transparent;
+            }
+            display: flex;
+            min-width: 34rem;
+            position: absolute;
+            right: -37rem;
+            top: -5rem;
+            background-color: white;
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s linear;
+            z-index: 10;
+
+            img {
+                width: 5rem;
+                height: 5rem;
+                border-radius: 50%;
+            }
+            .content {
+                margin-left: 2rem;
+                p {
+                    @include text($text-base, $fw-normal, $black-color);
+                    margin-bottom: 1rem;
+                    span {
+                        margin-left: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+    .actions {
+        .action-btn {
+            &.view {
+                background-color: rgb(9, 9, 214);
+            }
+            &.edit {
+                background-color: rgb(6, 156, 6);
+            }
+            &.delete {
+                background-color: rgb(194, 8, 8);
+            }
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 1rem;
+            margin-right: 1.5rem;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            i {
+                font-size: $text-base;
+                color: white;
+            }
+        }
+    }
+}

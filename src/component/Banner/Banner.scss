@@ -1,0 +1,62 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/mixin.scss";
+
+.banner {
+    background-color: $bg-element-primary;
+    .banner-content {
+        &-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 6rem 0 2.5rem;
+            .item {
+                display: flex;
+                align-items: center;      
+                width: 30%;
+                .icon {
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 50%;
+                    background-color: #D1D7DC;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    i {
+                        @include text($text-sm, 900, black);
+                    }
+                }
+                p {
+                    @include text($text-sm, $fw-bold, black);
+                    line-height: 2rem;
+                    width: 70%;
+                    margin-left: 2rem;
+                }
+            }
+        }
+        &-top {
+            width: 38%;
+            position: absolute;
+            top: 20%;
+            h2 {
+                @include text($text-xl, $fw-bold, black);
+            }
+            p {
+                @include text($text-normal, $fw-normal, black);
+                margin-top: 2rem;
+            }
+            .btn {
+                display: inline-block;
+                @include button($text-sm, $fw-bold, 1rem, 2rem);
+                margin-top: 2rem;
+                i {
+                    padding-left: 1rem;
+                }
+            }
+        }
+        position: relative;
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/mixin.scss";
+
+.auth-form {
+    width: 34rem;
+    margin: 0 auto;
+    & > .title {
+        @include text($text-base, $fw-bold, black);
+        padding-top: 8rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $black-color;
+        margin-bottom: 2rem;
+    }
+    .form-item {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        padding: 1.5rem 1rem;
+        border: 1px solid $black-color;
+        margin-bottom: 1rem;
+        i {
+            font-size: $text-base;
+            color: $text-light-color;
+            padding-right: 1rem;
+        }
+        input {
+            &:focus {
+                outline: none;  
+            }
+            border: 0;
+            background-color: transparent;
+            @include text($text-base, $fw-normal, $text-light-color);
+            flex: 1;
+        }
+    }
+    .error {
+        text-align: left;
+        @include text($text-sm-2, $fw-normal, rgb(180, 33, 33));
+        padding: 0;
+        border: 0;
+        margin-bottom: 1rem;
+    }
+    .btn {
+        margin-bottom: 2rem;
+        width: 100%;
+        @include button($text-base, $fw-bold, 1.5rem, 1rem);
+    }
+    p {
+        border-top: 1px solid $black-color;
+        padding-top: 2rem;
+        text-align: center;
+        @include text($text-sm, $fw-normal, black);
+        a {
+            text-decoration: none;
+            color: $text-hover-color;
+            font-weight: $fw-bold;
+        }
+    }
+}

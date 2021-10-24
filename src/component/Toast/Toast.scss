@@ -1,0 +1,86 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/mixin.scss";
+
+.toast {
+    position: fixed;
+    top: 4rem;
+    right: 1rem;
+    z-index: 20;
+    .item {
+        &.success {
+            border-color: $toast-success;
+            .icon {
+                background-color: $toast-success;
+            }
+        }
+        &.error {
+            border-color: $toast-error;
+            .icon {
+                background-color: $toast-error;
+            }
+        }
+        &.close {
+            transform: translateX(120%);
+            animation: slideOut 0.5s linear;
+        }
+        min-width: 32rem;
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 1rem;
+        background-color: white;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid $black-color;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0,0,0, 0.2);
+        animation: slideRight 0.5s linear;
+        transition: all 0.3s linear;
+        .icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1.5rem;
+            font-size: $text-base;
+            color: white;
+        }
+        .content {
+            margin-right: 2rem;
+            h3 {
+                @include text($text-sm, $fw-bold, $black-color);
+                margin-bottom: 0.5rem;
+            }
+            p {
+                @include text($text-sm-2, $fw-normal, $text-light-color);    
+            }
+        }
+        button {
+            display: block;
+            margin-left: auto;
+            border: 0;
+            background-color: transparent;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(120%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(120%);
+    }
+}

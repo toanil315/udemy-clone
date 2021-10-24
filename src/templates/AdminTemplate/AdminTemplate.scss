@@ -1,0 +1,120 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/mixin.scss";
+
+.admin-template {
+    .logo {
+        padding-top: 3rem;
+        margin-bottom: 5rem;
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .menu {
+        .menu-item {
+            &.active {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 92%;
+                    height: 100%;
+                    background-color: white;
+                    border-top-left-radius: 3rem;
+                    border-bottom-left-radius: 3rem;
+                    z-index: -1;
+                }
+                color: $admin-primary-color;
+                .rounded-top, .rounded-bottom {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background-color: $admin-primary-color;
+                    }
+                    position: absolute;
+                    right: 0;
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    background-color: white;
+                }
+                .rounded-top {
+                    &::before {
+                        border-bottom-right-radius: 5rem;
+                    }
+                    top: -3.5rem;
+                }
+                .rounded-bottom {
+                    &::before {
+                        border-top-right-radius: 5rem;
+                    }
+                    bottom: -3.5rem;
+                }
+            }
+            display: block;
+            padding: 1rem;
+            margin-bottom: 3rem;
+            padding-left: 4rem;
+            @include text($text-base, 500, rgba(255, 255, 255, 0.9));
+            position: relative;
+            z-index: 1;
+            i {
+                padding-right: 0.8rem;
+            }
+            
+        }
+    }
+    .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .admin-search {
+            padding: 0.7rem 1rem;
+            border: 2px solid $black-color-light;
+            border-radius: 1rem;
+            i {
+                padding-right: 1rem;
+            }
+            input {
+                &:focus {
+                    outline: none;
+                }
+                border: 0;
+                @include text($text-sm, $fw-normal, $black-color);
+                width: 20rem;
+            }
+        }
+        & > .user-ctrl {
+            display: flex;
+            align-items: center;
+            .notify {
+                width: 3.5rem;
+                height: 3.5rem;
+                background-color: rgba(0,0,0, 0.1);
+                text-align: center;
+                border-radius: 5px;
+                margin-right: 2rem;
+                i {
+                    font-size: $text-base;
+                    color: $black-color;
+                    line-height: 3.5rem;
+                }
+            }
+            .info {
+                cursor: pointer;
+                img {
+                    width: 3.5rem;
+                    border-radius: 5px;
+                }
+                span {
+                    padding: 0 0.8rem;
+                    @include text($text-sm, 500, $black-color);
+                }
+            }
+        }
+    }
+}

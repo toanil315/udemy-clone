@@ -1,0 +1,62 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/mixin.scss";
+
+.slick-slider {
+    .slick-list {
+        padding: 30rem 0 !important;
+        margin-top: -30rem !important;
+        margin-bottom: -30rem !important;
+        margin-right: -1.5rem !important;
+        .slider-item {
+            & > .course {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+    .slick-next, .slick-prev {
+        top: 45%;
+        z-index: 5;
+        i {
+            &:hover, &:focus {
+                background-color: rgb(59, 59, 59);
+                color: white;
+            }
+        }
+    }
+
+    .slick-next {
+        right: -3rem;
+        i {
+            width: 4rem;
+            height: 4rem;
+            background-color: $black-color;
+            border-radius: 50%;
+            font-size: $text-base;
+            color: white;
+
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .slick-prev {
+        left: -3rem;
+        i {
+            width: 4rem;
+            height: 4rem;
+            background-color: $black-color;
+            border-radius: 50%;
+            font-size: $text-base;
+            color: white;
+
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .slick-next::before, .slick-prev::before {
+        display: none;
+    }
+}
