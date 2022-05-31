@@ -7,6 +7,7 @@ import { quanLyKhoaHocService } from '../../services/QuanLyKhoaHocService';
 import { STATUS_CODE, TOKEN } from '../../util/Setting/config';
 import { getInfoUser } from '../../redux/actions/QuanLyUserAction';
 import { history } from '../../App';
+import { CLEAR_USER_INFO } from '../../redux/types/QuanLyUserType';
 
 function Header(props) {
     const { listCategory, cart } = useSelector(state => state.QuanLyKhoaHocReducer);
@@ -17,10 +18,7 @@ function Header(props) {
     const searchRef = useRef(null);
     const dispatch = useDispatch();
 
-    console.log(infoUser);
-
-    useEffect(() => {
-        console.log("effect");
+    useEffect(() => {        
         dispatch(getListCategoryAction());
         if (localStorage.getItem(TOKEN)) {
             dispatch(getInfoUser());
@@ -164,7 +162,10 @@ function Header(props) {
                                 </ul>
                                 <div className="line"></div>
                                 <ul className="user-featured">
-                                    <li><p>Log out</p></li>
+                                    <li onClick={() => {
+                                        localStorage.removeItem(TOKEN)
+                                        dispatch({type: CLEAR_USER_INFO})
+                                    }}><p>Log out</p></li>
                                 </ul>
                             </div>
                         </div>

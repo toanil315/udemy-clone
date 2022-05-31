@@ -70,7 +70,7 @@ export default function Signup(props) {
             <p className="error">{formik.errors.soDT}</p>
             <div className="form-item">
                 <i className="fa fa-users"></i>
-                <input onChange={formik.handleChange} name="maNhom" placeholder="Id group" />
+                <input onChange={formik.handleChange} name="maNhom" placeholder="Id group: GP08, GP09..." />
             </div>
             <p className="error">{formik.errors.maNhom}</p>
             <div className="form-item">
